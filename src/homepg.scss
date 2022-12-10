@@ -1,0 +1,63 @@
+//main page 
+html {
+    font-size: 10px;
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body,
+#root,
+.App,
+.fullHeight {
+    height: 100%;
+}
+
+*,
+::before,
+::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//from google font
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+// Main page. search
+h1 {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1,
+h1:hover {
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s eas-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+//Home page main big image
+.main {
+    width: 100%;
+    height: calc(100% -6.5rem);
+    max-width: 1450px;
+    padding: 0 10px;
+    margin: 0 auto;
+
+    //font size for search. later make search icon or delete
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}

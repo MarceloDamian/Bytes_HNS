@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 10.5rem;
+    box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.23);
+    background-color: rgba(226, 235, 192, 255);
+
+    .wrap {
+        position: relative;
+        height: 100%;
+        width: 1400px;
+        margin: 0 auto;
+
+        .logo {
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .callToActions {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: black;
+
+            ul,
+            li {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                list-style-type: none;
+                display: inline-block;
+                margin-right: 1.5rem;
+
+                &:last-child {
+                    margin-right: 0; //Registration has margin
+                }
+
+                a {
+                    font-size: 1.8rem;
+                    line-height: 1;
+                    color: green;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

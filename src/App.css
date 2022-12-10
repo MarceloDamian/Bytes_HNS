@@ -1,0 +1,38 @@
+html{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+#zip-code{
+border-top-left-radius: 1rem;
+border-top-right-radius: 1rem;
+border-bottom-left-radius: 1rem;
+border-bottom-right-radius: 1rem;
+}
+.box{
+  display:flex;
+  flex-direction: column;
+  background-color: #222;
+  width:400px;
+  color:aliceblue;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 15px;
+}
+
+.box .sub ul
+{
+  list-style: none;
+}
+.city{
+  margin-top: 20px;
+}
