@@ -18,6 +18,7 @@
             -webkit-transform: translateY(-50%);
             -moz-transform: translateY(-50%);
             transform: translateY(-50%);
+            
         }
 
         .callToActions {
@@ -41,12 +42,18 @@
                 margin-right: 1.5rem;
 
                 &:last-child {
-                    margin-right: 0; //Registration has margin
+                    margin-right: 0rem; //Registration has margin
                 }
 
                 a {
+                    display:grid;
+                    grid-template-columns: 0.2fr 0.2fr;
+                    padding-block: 1cm;
+                    padding-right: 88%;
+                    padding-left: 0.7cm;
+                    border: 2px solid rgba(74, 145, 89, 0.222);
                     font-size: 1.8rem;
-                    line-height: 1;
+                    background-color: rgba(179, 221, 230, 0.071);
                     color: green;
                     text-decoration: none;
                     text-transform: uppercase;

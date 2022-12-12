@@ -8,6 +8,8 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
+    border-color: aqua;
+
 }
 
 html,
@@ -16,6 +18,7 @@ body,
 .App,
 .fullHeight {
     height: 100%;
+
 }
 
 *,
@@ -24,6 +27,7 @@ body,
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
 }
 
 //from google font
@@ -32,12 +36,13 @@ body {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1;
+
 }
 
 // Main page. search
 h1 {
     text-decoration: none;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 h1,
@@ -51,7 +56,8 @@ h1:hover {
 //Home page main big image
 .main {
     width: 100%;
-    height: calc(100% -6.5rem);
+    height:calc(100% -6.5rem);
+
     max-width: 1450px;
     padding: 0 10px;
     margin: 0 auto;
