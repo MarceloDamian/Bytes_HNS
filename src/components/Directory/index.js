@@ -1,5 +1,4 @@
-// import React from "react";
-
+// delete this later
 import HomePic from "./../../asserts/homepage.png";
 import "./styles.scss";
 import React, { useState } from "react";
