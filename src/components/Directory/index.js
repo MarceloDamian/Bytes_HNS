@@ -12,21 +12,7 @@ import Alert from "../Alert";
 let storearray = [];
 
 
-function Directory({ data }) {
-  const [searchInput, setSearchInput] = useState([]);
-  const handleChange = (event) => {
-    const enteredword = event.target.value.toLowerCase();
-
-    const newFilter = data.filter((value) => {
-      return value.fields.item_name.toLowerCase().includes(enteredword);
-    });
-
-    if (enteredword === "") {
-      setSearchInput("");
-    } else {
-      setSearchInput(newFilter);
-    }
-  };
+function Directory() {
 
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
@@ -38,6 +24,9 @@ function Directory({ data }) {
   const url = `https://api.nutritionix.com/v1_1/search/${query}?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=${APP_ID}&appKey=${APP_KEY}`;
 
   const getData = async () => {
+    
+    storearray.length=0;
+
     if (query !== "") 
     {
       const result = await Axios.get(url);
@@ -51,25 +40,13 @@ function Directory({ data }) {
           {
             return setAlert("No food with such name");
           }
-          console.log(item.fields.item_name);
           setRecipes(item.fields.item_name);
           storearray.push(item.fields.item_name);
-          console.log (storearray)
           setQuery("");
           setAlert("");
-          // return (
-          //   <li> Item{item.fields.item_name} </li>
-          // );
+
         }
       )
-
-      // if (!result) {
-      //   return setAlert("No food with such name");
-      // }
-      // console.log(result);
-      // setRecipes(result.hits.fields.item_name);
-      // setQuery("");
-      // setAlert("");
 
     } 
     else 
@@ -110,21 +87,19 @@ function Directory({ data }) {
         </div>
       </div>
 
-
-      {console.log (storearray)}
-
       {storearray.map((arrayitem)=>
         <ul>
           <Link to="/Food_Info">{arrayitem}</Link>
         </ul>
         )
       }
-
       {/* {recipes !== [] &&
         recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)} */}
       </div>
     </div>
+    
   );
+  
 }
 
 export default Directory;
