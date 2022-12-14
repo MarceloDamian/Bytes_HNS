@@ -9,6 +9,9 @@ import { v4 as uuidv4 } from "uuid";
 import Recipe from "../Recipe";
 import Alert from "../Alert";
 
+let storearray = [];
+
+
 function Directory({ data }) {
   const [searchInput, setSearchInput] = useState([]);
   const handleChange = (event) => {
@@ -34,10 +37,6 @@ function Directory({ data }) {
 
   const url = `https://api.nutritionix.com/v1_1/search/${query}?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=${APP_ID}&appKey=${APP_KEY}`;
 
-  //=`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
-
-  //https://api.nutritionix.com/v1_1/search/${query}?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=${APP_ID}&appKey=${APP_KEY}
-
   const getData = async () => {
     if (query !== "") 
     {
@@ -54,11 +53,13 @@ function Directory({ data }) {
           }
           console.log(item.fields.item_name);
           setRecipes(item.fields.item_name);
+          storearray.push(item.fields.item_name);
+          console.log (storearray)
           setQuery("");
           setAlert("");
-          return (
-            <li> Item{item.fields.item_name} </li>
-          );
+          // return (
+          //   <li> Item{item.fields.item_name} </li>
+          // );
         }
       )
 
@@ -86,12 +87,10 @@ function Directory({ data }) {
   };
 
   return (
+    <div className = "recipes">
     <div className="directory">
       <div className="wrap">
-        {/* <div className="recipes">
-          {recipes !== [] &&
-            recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)}
-        </div> */}
+
         <div className="item" style={{ backgroundImage: `url(${HomePic})` }}>
           {/* Search bar */}
           <h1>
@@ -109,6 +108,20 @@ function Directory({ data }) {
             </form>
           </h1>
         </div>
+      </div>
+
+
+      {console.log (storearray)}
+
+      {storearray.map((arrayitem)=>
+        <ul>
+          <Link to="/Food_Info">{arrayitem}</Link>
+        </ul>
+        )
+      }
+
+      {/* {recipes !== [] &&
+        recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)} */}
       </div>
     </div>
   );

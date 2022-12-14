@@ -13,7 +13,7 @@ const Recipe = ({ recipe }) => {
         URL
       </a>
       <button onClick={() => setShow(!show)}>Ingredients</button>
-      {show && <RecipeDetails ingredients={ingredients} />}
+      {/* {show && <RecipeDetails ingredients={ingredients} />} */}
     </div>
   );
 };
