@@ -204,9 +204,13 @@
             cursor: pointer;
             color: #fff;
         }
-        .wrapresults
-        {
-        }
+
+    }
+    .wrapresults{
+        border-style: dashed;
+        display:grid;
+        grid-template-columns: 0.2fr 0.2fr;
+        border: 2px solid rgba(0, 0, 0, 0.222);
 
     }
 

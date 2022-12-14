@@ -103,7 +103,7 @@ function Directory() {
             if (index % 2 === 1)
             {
               return (
-                <Link to="/Food_Info"><ul>Calories: {arrayitem}</ul></Link> 
+                <ul>Calories: {arrayitem}</ul>
               )
             }
             else
