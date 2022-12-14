@@ -10,10 +10,8 @@ import Recipe from "../Recipe";
 import Alert from "../Alert";
 
 function Directory({ data }) {
-  
   const [searchInput, setSearchInput] = useState([]);
-  const handleChange = (event) => 
-  {
+  const handleChange = (event) => {
     const enteredword = event.target.value.toLowerCase();
 
     const newFilter = data.filter((value) => {
