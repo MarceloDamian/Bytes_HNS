@@ -42,6 +42,7 @@ function Directory() {
           }
           setRecipes(item.fields.item_name);
           storearray.push(item.fields.item_name);
+          storearray.push (item.fields.nf_calories);
           setQuery("");
           setAlert("");
 
@@ -87,14 +88,40 @@ function Directory() {
         </div>
       </div>
 
-      {storearray.map((arrayitem)=>
-        <ul>
-          <Link to="/Food_Info">{arrayitem}</Link>
-        </ul>
-        )
+      
+      <div className = "wrapresults">
+      {
+
+        // storearray.map((arrayitem)=>
+        // <ul>  
+        //   {arrayitem }
+        //   {/* <Link to="/Food_Info">{arrayitem}</Link> */}
+        // </ul>
+        // )
+
+          storearray.map(function(arrayitem,index){
+            if (index % 2 === 1)
+            {
+              return (
+                <ul>Calories: {arrayitem}</ul>
+              )
+            }
+            else
+            {
+              return (
+                <ul>Item: {arrayitem}</ul>
+              )
+            }
+          })
       }
+      </div>
+
+
+
+  
+
       {/* {recipes !== [] &&
-        recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)} */}
+        // recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)} */}
       </div>
     </div>
     
